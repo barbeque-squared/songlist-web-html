@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <link rel="icon" href='assets/favicon.svg' />
+    <meta name="description" content="Songlist" />
+    <link rel="apple-touch-icon" href='assets/logo512.png' />
+    <title>Songlist</title>
+    <meta name="description" content="Very simple songlist">
+    <meta name="author" content="barbeque-squared">
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="script.js"></script>
+  </head>
+  <body onLoad="pageload()">
+    <div class="inputs">
+        <div id="category" class="category">
+            <label><input type="radio" name="category" checked value="pony"/>pony</label>
+            <label><input type="radio" name="category" value="non-pony""/>non-pony</label>
+            <label><input type="radio" name="category" value="shimmer""/>shimmer</label>
+        </div>
+        <div class="text">
+            <select id="language">
+                <option selected value>Any</option>
+                <option value="English">English</option>
+                <option value="German">German</option>
+                <option value="Other">Other</option>
+            </select>
+            <input id="search" type="text" placeholder="Filter... (needs at least 4 characters)">
+            <button disabled id="clearsearch">✖</button>
+        </div>
+        <div class="checkboxes">
+            <label><input id="instrumental" type="checkbox">Instrumental</label>
+            <label><input id="duet" type="checkbox">Duet</label>
+        </div>
+    </div>
+    <div class="Songbrowser">
+        <table>
+            <thead>
+                <tr>
+                    <th class="left">Artist</th>
+                    <th class="language"></th>
+                    <th class="left">Title</th>
+                    <th class="left">Year</th>
+                    <th colspan="4">Type</th>
+                    <th class="dmx">DMX</th>
+                </tr>
+            </thead>
+            <tbody id="tbody"></tbody>
+        </table>
+    </div>
+    <footer>
+        Source: <a href="https://github.com/barbeque-squared/songlist-web">https://github.com/barbeque-squared/songlist-web</a>
+    </footer>
+  </body>
+</html>

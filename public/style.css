@@ -1,0 +1,141 @@
+/* MAIN APP */
+body {
+  background-color: #222;
+  color: lightgray;
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  margin-top: .5em;
+  text-align: center;
+}
+footer a {
+  color: steelblue;
+}
+
+/* INPUTS */
+.inputs {
+  flex-grow: 0;
+  min-width: 50%;
+  font-size: 1.25em;
+  margin: auto;
+}
+.inputs .category {
+  flex-grow: 0;
+  font-size: 1em;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: .5em;
+  min-width: 50%;
+  margin: auto;
+  text-align: center;
+}
+
+.inputs .category label {
+  background-color: #ae1c28;
+  padding: .25em .5em;
+  border-radius: 0.5em;
+}
+
+.inputs .category_no_qa {
+  background-color: #d9c50b;
+  color: black;
+  text-align: center;
+}
+
+.inputs .text {
+  margin: .2em 0;
+  display: grid;
+  grid-template-columns: 4em auto 3em;
+  grid-gap: .1em;
+}
+.inputs input[type="text"] {
+  display: block;
+  font-size: inherit;
+  padding: .2em .5em;
+  outline: none;
+  border-radius: 0.5em 0 0 0.5em;
+}
+.inputs input button {
+  border-radius: 0 .4em .4em 0;
+  font-size: 1.4em;
+  line-height: 1em;
+}
+
+.inputs .checkboxes {
+  display: grid;
+  grid-template-columns: 1fr .6fr .8fr 1fr;
+  grid-gap: .25em;
+  text-align: center;
+}
+.inputs .checkboxes label {
+  background-color: #21468b;
+  padding: .25em .25em;
+  border-radius: 0.5em;
+}
+
+/* SONGBROWSER TABLE */
+.Songbrowser {
+  flex-grow: 999;
+  display: flex;
+  flex-direction: column;
+}
+/* Layout */
+.Songbrowser table {
+  border-collapse: collapse;
+  width: 100%;
+}
+.Songbrowser thead .left {
+  text-align: left;
+}
+.Songbrowser thead tr th {
+  position: sticky;
+  z-index: 1;
+  top: 0;
+  background-color: #222;
+}
+.Songbrowser thead tr th.language {
+  width: 1.05em;
+}
+.Songbrowser thead tr th.dmx {
+  width: 2.5em;
+}
+
+/* SONGBROWSER CONTENT */
+.Songbrowser tbody tr > td.quality {
+  width: 1.05em;
+}
+.Songbrowser tbody tr > td.language,
+.Songbrowser tbody tr > td.quality,
+.Songbrowser tbody tr > td.dmx {
+  text-align: center;
+}
+.Songbrowser tbody tr > td.language {
+  white-space: nowrap;
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  column-gap: .1em;
+}
+.Songbrowser tbody tr > td.language img {
+  width: 1.3333333em;
+}
+.Songbrowser tbody tr > td > span.century {
+  opacity: 0;
+}
+.Songbrowser tbody tr:hover > td > span.century {
+  opacity: 1;
+}
+/* Colors */
+.Songbrowser tbody tr {
+  border-top: 1px solid #333;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.Songbrowser tbody tr:hover {
+  background-color: lightgrey;
+  color: #333;
+}
+
