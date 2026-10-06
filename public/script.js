@@ -23,6 +23,13 @@ const languageMapping = {
     Swedish: 'se',
     Ukrainian: 'ua',
 }
+const tagMapping = {
+    explicit: 'E',
+    questionable: 'Q',
+    suggestive: 'S',
+    vulgar: 'V',
+    'seizure warning': 'SW',
+}
 
 for (const language in languageMapping) {
     const link = document.createElement('link')
@@ -185,6 +192,21 @@ function languageTd(language) {
     return td
 }
 
+function tagsTd(tags) {
+    const td = newTd()
+    td.className = 'tags'
+    for (const tag of tags) {
+        console.log(tag)
+        if (tag in tagMapping) {
+            const span = document.createElement('span')
+            span.setAttribute('title', tag)
+            span.textContent = tagMapping[tag]
+            td.appendChild(span)
+        }
+    }
+    return td
+}
+
 function select(what) {
     const newChildren = []
     // build the new children
@@ -209,6 +231,7 @@ function select(what) {
         // TODO: fix language icons
         tr.appendChild(languageTd(song.language))
         tr.appendChild(newTdWithValue(song.title))
+        tr.appendChild(tagsTd(song.tags))
         tr.appendChild(yearTd(song.year))
         tr.appendChild(newTdWithClassAndValue('quality', song.variants.includes(0) || song.variants.includes(1) ? 'r' : ''))
         tr.appendChild(newTdWithClassAndValue('quality', song.variants.includes(2) || song.variants.includes(3) ? 'i' : ''))

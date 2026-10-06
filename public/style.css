@@ -124,6 +124,12 @@ footer a {
 .Songbrowser tbody tr > td.language img {
   width: 1.3333333em;
 }
+.Songbrowser tbody tr > td.tags {
+  text-align: right;
+}
+.Songbrowser tbody tr > td.tags > span:not(:first-child) {
+  padding-left: .5em;
+}
 .Songbrowser tbody tr > td > span.century {
   opacity: 0;
 }
